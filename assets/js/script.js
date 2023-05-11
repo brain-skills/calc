@@ -70,13 +70,12 @@ document.querySelector('#btn_divide').addEventListener('click', function(){
 document.querySelector('#btn_root').addEventListener('click', function(){
     lastOperand = parseFloat(input.value);
     operation = 'root';
-    // input.value = '';
 });
 // Возведение в степень
 document.querySelector('#btn_exponentiation').addEventListener('click', function(){
     lastOperand = parseFloat(input.value);
-    operation = 'x<sup>2</sup>';
-    input.value = input.value ** operation;
+    operation = 'exponentiation';
+    input.value = '';
 });
 // Получение результата
 document.querySelector('#btn_equals').addEventListener('click', function(){
@@ -110,7 +109,7 @@ document.querySelector('#btn_equals').addEventListener('click', function(){
         lastOperand = 0;
         input.value = result;
     }
-    if(operation === 'x<sup>2</sup>'){
+    if(operation === 'exponentiation'){
         const result = lastOperand ** parseFloat(input.value);
         operation = null;
         lastOperand = 0;
