@@ -46,25 +46,25 @@ document.querySelector('#btn_clr').addEventListener('click', function () {
 document.querySelector('#btn_plus').addEventListener('click', function(){
     lastOperand = parseFloat(input.value);
     operation = '+';
-    input.value = input.value + operation;
+    input.value = '';
 });
 // Вычитание
 document.querySelector('#btn_minus').addEventListener('click', function(){
     lastOperand = parseFloat(input.value);
     operation = '-';
-    input.value = input.value - operation;
+    input.value = '';
 });
 // Умножение
 document.querySelector('#btn_multiply').addEventListener('click', function(){
     lastOperand = parseFloat(input.value);
     operation = '*';
-    input.value = input.value * operation;
+    input.value = '';
 });
 // Деление
 document.querySelector('#btn_divide').addEventListener('click', function(){
     lastOperand = parseFloat(input.value);
     operation = '/';
-    input.value = input.value / operation;
+    input.value = '';
 });
 // Корень из
 document.querySelector('#btn_root').addEventListener('click', function(){
