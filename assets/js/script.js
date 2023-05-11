@@ -3,37 +3,37 @@ let operation = null;
 const input = document.querySelector('input');
 
 document.querySelector('#btn_one').addEventListener('click', function(){
-    inputWindow.value += '1';
+    input.value += '1';
 });
 document.querySelector('#btn_two').addEventListener('click', function(){
-    inputWindow.value += '2';
+    input.value += '2';
 });
 document.querySelector('#btn_three').addEventListener('click', function(){
-    inputWindow.value += '3';
+    input.value += '3';
 });
 document.querySelector('#btn_four').addEventListener('click', function(){
-    inputWindow.value += '4';
+    input.value += '4';
 });
 document.querySelector('#btn_five').addEventListener('click', function(){
-    inputWindow.value += '5';
+    input.value += '5';
 });
 document.querySelector('#btn_six').addEventListener('click', function(){
-    inputWindow.value += '6';
+    input.value += '6';
 });
 document.querySelector('#btn_seven').addEventListener('click', function(){
-    inputWindow.value += '7';
+    input.value += '7';
 });
 document.querySelector('#btn_eight').addEventListener('click', function(){
-    inputWindow.value += '8';
+    input.value += '8';
 });
 document.querySelector('#btn_nine').addEventListener('click', function(){
-    inputWindow.value += '9';
+    input.value += '9';
 });
 document.querySelector('#btn_zero').addEventListener('click', function(){
-    inputWindow.value += '0';
+    input.value += '0';
 });
 document.querySelector('#btn_dot').addEventListener('click', function(){
-    inputWindow.value += '.';
+    input.value += '.';
 });
 document.querySelector('#btn_clr').addEventListener('click', function () {
     lastOperand = 0;
@@ -44,76 +44,76 @@ document.querySelector('#btn_clr').addEventListener('click', function () {
 // =================================================================
 // Сложение
 document.querySelector('#btn_plus').addEventListener('click', function(){
-    lastOperand = parseFloat(inputWindow.value);
-    operation = 'sum';
-    inputWindow.value = '';
+    lastOperand = parseFloat(input.value);
+    operation = '+';
+    input.value = input.value + operation;
 });
 // Вычитание
 document.querySelector('#btn_minus').addEventListener('click', function(){
-    lastOperand = parseFloat(inputWindow.value);
-    operation = 'def';
-    inputWindow.value = '';
+    lastOperand = parseFloat(input.value);
+    operation = '-';
+    input.value = input.value - operation;
 });
 // Умножение
 document.querySelector('#btn_multiply').addEventListener('click', function(){
-    lastOperand = parseFloat(inputWindow.value);
-    operation = 'multiply';
-    inputWindow.value = '';
+    lastOperand = parseFloat(input.value);
+    operation = '*';
+    input.value = input.value * operation;
 });
 // Деление
 document.querySelector('#btn_divide').addEventListener('click', function(){
-    lastOperand = parseFloat(inputWindow.value);
-    operation = 'divide';
-    inputWindow.value = '';
+    lastOperand = parseFloat(input.value);
+    operation = '/';
+    input.value = input.value / operation;
 });
 // Корень из
 document.querySelector('#btn_root').addEventListener('click', function(){
-    lastOperand = parseFloat(inputWindow.value);
+    lastOperand = parseFloat(input.value);
     operation = 'root';
-    inputWindow.value = '';
+    // input.value = '';
 });
 // Возведение в степень
 document.querySelector('#btn_exponentiation').addEventListener('click', function(){
-    lastOperand = parseFloat(inputWindow.value);
-    operation = 'exp';
-    inputWindow.value = '';
+    lastOperand = parseFloat(input.value);
+    operation = 'x<sup>2</sup>';
+    input.value = input.value ** operation;
 });
 // Получение результата
 document.querySelector('#btn_equals').addEventListener('click', function(){
-    if(operation === 'sum'){
-        const result = lastOperand + parseFloat(inputWindow.value);
+    if(operation === '+'){
+        const result = lastOperand + parseFloat(input.value);
         operation = null;
         lastOperand = 0;
-        inputWindow.value = result;
+        input.value = result;
     }
-    if(operation === 'def'){
-        const result = lastOperand - parseFloat(inputWindow.value);
+    if(operation === '-'){
+        const result = lastOperand - parseFloat(input.value);
         operation = null;
         lastOperand = 0;
-        inputWindow.value = result;
+        input.value = result;
     }
-    if(operation === 'multiply'){
-        const result = lastOperand * parseFloat(inputWindow.value);
+    if(operation === '*'){
+        const result = lastOperand * parseFloat(input.value);
         operation = null;
         lastOperand = 0;
-        inputWindow.value = result;
+        input.value = result;
     }
-    if(operation === 'divide'){
-        const result = lastOperand / parseFloat(inputWindow.value);
+    if(operation === '/'){
+        const result = lastOperand / parseFloat(input.value);
         operation = null;
         lastOperand = 0;
-        inputWindow.value = result;
+        input.value = result;
     }
     if(operation === 'root'){
-        const result = parseFloat(Math.sqrt(inputWindow.value));
+        const result = parseFloat(Math.sqrt(input.value));
         operation = null;
         lastOperand = 0;
-        inputWindow.value = result;
+        input.value = result;
     }
-    if(operation === 'exp'){
-        const result = lastOperand ** parseFloat(inputWindow.value);
+    if(operation === 'x<sup>2</sup>'){
+        const result = lastOperand ** parseFloat(input.value);
         operation = null;
         lastOperand = 0;
-        inputWindow.value = result;
+        input.value = result;
     }
 });
